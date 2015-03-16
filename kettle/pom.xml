@@ -44,7 +44,7 @@
     <version.org.hawkular.metrics>0.3.0-SNAPSHOT</version.org.hawkular.metrics>
     <version.org.hawkular.console>1.0.0-SNAPSHOT</version.org.hawkular.console>
     <version.org.hawkular.accounts>1.0.0-SNAPSHOT</version.org.hawkular.accounts>
-    <version.org.keycloak>1.1.0.Final</version.org.keycloak>
+    <version.org.keycloak>1.2.0.Beta1-SNAPSHOT</version.org.keycloak>
   </properties>
 
   <dependencies>
