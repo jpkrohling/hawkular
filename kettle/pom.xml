@@ -117,6 +117,18 @@
       <version>${version.org.keycloak}</version>
       <type>zip</type>
     </dependency>
+    <dependency>
+      <groupId>org.keycloak</groupId>
+      <artifactId>keycloak-war-deployment</artifactId>
+      <version>${version.org.keycloak}</version>
+      <type>zip</type>
+    </dependency>
+    <dependency>
+      <groupId>org.keycloak</groupId>
+      <artifactId>keycloak-jboss-modules</artifactId>
+      <version>${version.org.keycloak}</version>
+      <type>zip</type>
+    </dependency>
 
   </dependencies>
 

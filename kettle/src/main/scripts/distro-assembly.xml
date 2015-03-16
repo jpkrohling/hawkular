@@ -53,6 +53,9 @@
         <!-- exclude unwanted stuff and exclude stuff we want to overlay via our own distro-resources -->
         <excludes>
           <exclude>${nest.dist.zip.root.dir}/standalone/configuration/standalone.xml</exclude>
+          <exclude>**/modules/system/layers/base/org/picketlink/**</exclude>
+          <exclude>**/modules/system/layers/base/org/jboss/as/cli/**</exclude>
+          <exclude>**/modules/system/layers/base/org/jboss/aesh/**</exclude>
 
           <!-- Our standalone.conf contains an override to the JAVA_OPTS, to tell Keycloak to import our realm -->
           <exclude>${nest.dist.zip.root.dir}/bin/standalone.conf</exclude>
@@ -102,6 +105,17 @@
       <useProjectArtifact>false</useProjectArtifact>
       <includes>
         <include>org.keycloak:keycloak-wildfly-adapter-dist:zip</include>
+        <include>org.keycloak:keycloak-war-deployment:zip</include>
+      </includes>
+      <unpack>true</unpack>
+      <fileMode>0644</fileMode>
+      <directoryMode>0755</directoryMode>
+    </dependencySet>
+    <dependencySet>
+      <outputDirectory>${nest.dist.zip.root.dir}/modules/system/layers/base/</outputDirectory>
+      <useProjectArtifact>false</useProjectArtifact>
+      <includes>
+        <include>org.keycloak:keycloak-jboss-modules:zip</include>
       </includes>
       <unpack>true</unpack>
       <fileMode>0644</fileMode>
