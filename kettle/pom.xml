@@ -47,7 +47,7 @@
     <version.org.hawkular.accounts>1.0.0-SNAPSHOT</version.org.hawkular.accounts>
     <version.org.hawkular.pinger>1.0.0-SNAPSHOT</version.org.hawkular.pinger>
     <version.org.hawkular.availCreator>1.0.0-SNAPSHOT</version.org.hawkular.availCreator>
-    <version.org.keycloak>1.1.0.Final</version.org.keycloak>
+    <version.org.keycloak>1.2.0.RC1-SNAPSHOT</version.org.keycloak>
   </properties>
 
   <dependencies>
@@ -117,6 +117,12 @@
       <artifactId>hawkular-accounts</artifactId>
       <version>${version.org.hawkular.accounts}</version>
       <type>war</type>
+    </dependency>
+    <dependency>
+      <groupId>org.hawkular.accounts</groupId>
+      <artifactId>hawkular-accounts-keycloak-theme</artifactId>
+      <version>${version.org.hawkular.accounts}</version>
+      <type>jar</type>
     </dependency>
 
     <!-- Keycloak-related dependencies -->
