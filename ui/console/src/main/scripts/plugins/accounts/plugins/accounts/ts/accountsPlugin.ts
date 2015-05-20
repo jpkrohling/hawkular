@@ -21,15 +21,38 @@ module HawkularAccounts {
     export var _module = angular.module(HawkularAccounts.pluginName, ['ui.bootstrap']);
     var accountsTab:any = undefined;
     var currentPersona:any = undefined;
+    var currentUser:any = undefined;
+
 
     _module.config(['$locationProvider', '$routeProvider', '$httpProvider', 'HawtioNavBuilderProvider', ($locationProvider, $routeProvider:ng.route.IRouteProvider, $httpProvider:ng.IHttpProvider, builder:HawtioMainNav.BuilderFactory) => {
+        var myAccountTab = builder
+            .create()
+            .id('myAccountTab')
+            .title(() => "My account")
+            .href(() => "/accounts/accounts")
+            .page(() => builder.join(HawkularAccounts.templatePath, 'accounts.html'))
+            .build();
+
+        var organizationsTab = builder
+            .create()
+            .id('organizationsTab')
+            .title(() => "Organizations")
+            .href(() => "/accounts/organizations")
+            .page(() => builder.join(HawkularAccounts.templatePath, 'organizations.html'))
+            .show(() => {
+                // this returns "true" if the user is the same as the current persona
+                // or if the current user is not loaded yet, meaning, the current persona is *not* an organization
+                return !!(!currentUser || currentUser.id === currentPersona.id);
+            })
+            .build();
+
         accountsTab = builder.create()
             .id(HawkularAccounts.pluginName)
             .title(() => "Accounts")
             .href(() => "/accounts")
-            .subPath("My account", "accounts", builder.join(HawkularAccounts.templatePath, 'accounts.html'))
-            .subPath("Organizations", "organizations", builder.join(HawkularAccounts.templatePath, 'organizations.html'))
+            .tabs(myAccountTab, organizationsTab)
             .build();
+
         builder.configureRouting($routeProvider, accountsTab);
 
         $routeProvider.when('/accounts/organizations/new', {templateUrl: builder.join(HawkularAccounts.templatePath, 'organization_new.html')});
@@ -38,7 +61,7 @@ module HawkularAccounts {
     }]);
 
     _module.run(['$rootScope', '$log', '$modal', '$document', 'userDetails', 'HawtioNav', 'HawkularInventory', ($rootScope, $log, $modal, $document, userDetails, HawtioNav:HawtioMainNav.Registry, hawkularInventory) => {
-        //HawtioNav.add(accountsTab);
+        HawtioNav.add(accountsTab);
         $rootScope.userDetails = userDetails;
 
         $rootScope.$on('IdleStart', () => {
@@ -119,7 +142,7 @@ module HawkularAccounts {
 
         $rootScope.$on('CurrentPersonaLoaded', (e, persona) => {
             currentPersona = persona;
-            $rootScope.currentPersona = currentPersona;
+            $rootScope.currentPersona = currentUser = currentPersona;
             initializeInventory(currentPersona.id);
         });
 
