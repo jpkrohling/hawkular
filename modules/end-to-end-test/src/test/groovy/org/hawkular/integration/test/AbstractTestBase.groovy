@@ -22,12 +22,13 @@ import org.junit.BeforeClass
 
 class AbstractTestBase {
 
-  static baseURI = System.getProperty('hawkular.base-uri') ?: '127.0.0.1:8080/hawkular/'
+  static baseURI = 'http://localhost:8080'
+  //static baseURI = System.getProperty('hawkular.base-uri') ?: 'http://localhost:8080/hawkular'
   static RESTClient client
 
   @BeforeClass
   static void initClient() {
-    client = new RESTClient("http://$baseURI", ContentType.JSON)
+    client = new RESTClient(baseURI, ContentType.JSON)
   }
 
 }
