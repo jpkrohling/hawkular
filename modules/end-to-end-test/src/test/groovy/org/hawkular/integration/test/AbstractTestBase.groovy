@@ -29,6 +29,9 @@ class AbstractTestBase {
   @BeforeClass
   static void initClient() {
     client = new RESTClient(baseURI, ContentType.JSON)
+    // username: jdoe
+    // password: password
+    client.defaultRequestHeaders.Authorization = "Basic amRvZTpwYXNzd29yZA=="
   }
 
 }

@@ -57,18 +57,6 @@
 
   </dependencies>
 
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <configuration>
-          <skip>true</skip>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-
   <profiles>
     <profile>
       <id>itest</id>
@@ -126,7 +114,7 @@
                     <javaOpt>-Djava.net.preferIPv4Stack=true</javaOpt>
                     <javaOpt>-Djboss.modules.system.pkgs=org.jboss.byteman </javaOpt>
                     <javaOpt>-Djava.awt.headless=true </javaOpt>
-                    <javaOpt>-Dkeycloak.import=/home/ppalaga/scratch/hawkular-master/wildFly/standalone/configuration/hawkular-realm.json</javaOpt>
+                    <javaOpt>-Dkeycloak.import=/home/jpkroehling/Projects/hawkular/dist/target/hawkular-1.0.0-SNAPSHOT/wildfly-8.2.0.Final/standalone/configuration/hawkular-realm.json</javaOpt>
                   </javaOpts>
                 </configuration>
                 <goals>
