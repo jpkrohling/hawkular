@@ -21,9 +21,10 @@ module HawkularAccounts {
     var accountsTab:any = undefined;
     var currentPersona:any = undefined;
 
-    _module.config(['$locationProvider', '$routeProvider', '$httpProvider', 'HawtioNavBuilderProvider', (
-        $locationProvider, $routeProvider:ng.route.IRouteProvider, $httpProvider:ng.IHttpProvider,
-        builder:HawtioMainNav.BuilderFactory) => {
+    _module.config(['$locationProvider', '$routeProvider', '$httpProvider',
+        'HawtioNavBuilderProvider', 'KeepaliveProvider',
+        ($locationProvider, $routeProvider:ng.route.IRouteProvider, $httpProvider:ng.IHttpProvider,
+        builder:HawtioMainNav.BuilderFactory, KeepaliveProvider:any) => {
         accountsTab = builder.create()
             .id(HawkularAccounts.pluginName)
             .title(() => 'Accounts')
@@ -38,6 +39,7 @@ module HawkularAccounts {
             'organization_new.html')});
         $locationProvider.html5Mode(true);
         $httpProvider.interceptors.push(PersonaInterceptorService.Factory);
+        KeepaliveProvider.interval(60); // in seconds
     }]);
 
     _module.run(['$rootScope', '$log', '$modal', '$document', 'userDetails', 'HawtioNav',
@@ -51,6 +53,15 @@ module HawkularAccounts {
 
         $rootScope.$on('IdleEnd', () => {
             $('#idle').slideUp();
+        });
+
+        $rootScope.$on('Keepalive', () => {
+            HawtioKeycloak.keycloak.updateToken(5);
+            // the operation above is async, but this method is called quite often, so, we update the token
+            // with the latest one from the KC object, no matter if the operation above complete yet or not.
+            console.log('Old token: ' + $rootScope.userDetails.token);
+            console.log('New token: ' + HawtioKeycloak.keycloak.token);
+            $rootScope.userDetails.token = HawtioKeycloak.keycloak.token;
         });
 
         $rootScope.$on('IdleTimeout', () => {
