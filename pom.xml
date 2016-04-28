@@ -88,18 +88,16 @@
     <version.com.google.code.gson>2.2.4</version.com.google.code.gson>
     <version.gnu.getopt>1.0.13</version.gnu.getopt>
 
-    <version.org.hawkular.accounts>2.0.22.Final</version.org.hawkular.accounts>
+    <version.org.hawkular.accounts>2.0.27.Final-SNAPSHOT</version.org.hawkular.accounts>
     <version.org.hawkular.agent>0.17.0.Final</version.org.hawkular.agent>
     <version.org.hawkular.alerts>1.0.2.Final</version.org.hawkular.alerts>
     <version.org.hawkular.btm>0.7.4.Final</version.org.hawkular.btm>
     <version.org.hawkular.cmdgw>0.11.0.Final</version.org.hawkular.cmdgw>
-    <version.org.hawkular.commons>0.4.0.Final</version.org.hawkular.commons>
+    <version.org.hawkular.commons>0.5.1.Final-SNAPSHOT</version.org.hawkular.commons>
     <version.org.hawkular.inventory>0.13.0.Final</version.org.hawkular.inventory>
     <version.org.hawkular.metrics>0.13.0.Final</version.org.hawkular.metrics>
 
     <version.org.jboss.weld.se>2.3.2.Final</version.org.jboss.weld.se>
-    <version.org.keycloak>1.8.1.Final</version.org.keycloak>
-    <version.org.keycloak.secretstore>1.0.12.Final</version.org.keycloak.secretstore>
     <version.rxjava>1.0.16</version.rxjava>
     <version.hystrix-core>1.4.21</version.hystrix-core>
     <version.hystrix-request-servlet>1.1.2</version.hystrix-request-servlet>

@@ -66,16 +66,16 @@
     </dependency>
 
     <dependency>
-      <groupId>org.hawkular.accounts</groupId>
-      <artifactId>hawkular-accounts-feature-pack</artifactId>
-      <version>${version.org.hawkular.accounts}</version>
+      <groupId>org.hawkular.agent</groupId>
+      <artifactId>hawkular-wildfly-agent-feature-pack</artifactId>
+      <version>${version.org.hawkular.agent}</version>
       <type>zip</type>
     </dependency>
 
     <dependency>
-      <groupId>org.hawkular.agent</groupId>
-      <artifactId>hawkular-wildfly-agent-feature-pack</artifactId>
-      <version>${version.org.hawkular.agent}</version>
+      <groupId>org.hawkular.commons</groupId>
+      <artifactId>hawkular-nest-feature-pack</artifactId>
+      <version>${version.org.hawkular.commons}</version>
       <type>zip</type>
     </dependency>
 
@@ -155,14 +155,6 @@
                   <groupId>org.hawkular.agent</groupId>
                   <artifactId>hawkular-wildfly-agent-feature-pack</artifactId>
                   <version>${version.org.hawkular.agent}</version>
-                  <type>zip</type>
-                  <includes>subsystem-templates/*.xml</includes>
-                  <outputDirectory>${project.build.directory}/feature-pack-resources</outputDirectory>
-                </artifactItem>
-                <artifactItem>
-                  <groupId>org.hawkular.accounts</groupId>
-                  <artifactId>hawkular-accounts-feature-pack</artifactId>
-                  <version>${version.org.hawkular.accounts}</version>
                   <type>zip</type>
                   <includes>subsystem-templates/*.xml</includes>
                   <outputDirectory>${project.build.directory}/feature-pack-resources</outputDirectory>
