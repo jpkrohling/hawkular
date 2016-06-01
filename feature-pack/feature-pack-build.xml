@@ -32,7 +32,7 @@
     <copy-artifact artifact="org.hawkular:hawkular-avail-creator" to-location="modules/system/layers/hawkular/org/hawkular/nest/main/deployments/hawkular-avail-creator.war" />
     <copy-artifact artifact="org.hawkular:hawkular-console" extract="true" to-location="modules/system/layers/hawkular/org/hawkular/nest/main/deployments/hawkular-console.war" />
     <copy-artifact artifact="org.hawkular:hawkular-pinger" to-location="modules/system/layers/hawkular/org/hawkular/nest/main/deployments/hawkular-pinger.war" />
-    <copy-artifact artifact="org.hawkular:hawkular-wildfly-agent-download" to-location="modules/system/layers/hawkular/org/hawkular/nest/main/deployments/hawkular-wildfly-agent-download.war" />
+    <copy-artifact artifact="org.hawkular.agent:hawkular-wildfly-agent-download" to-location="modules/system/layers/hawkular/org/hawkular/nest/main/deployments/hawkular-wildfly-agent-download.war" />
     <copy-artifact artifact="org.hawkular:hawkular-rest-api" to-location="modules/system/layers/hawkular/org/hawkular/nest/main/deployments/hawkular-rest-api.war" />
 
     <copy-artifact artifact="org.hawkular.agent:hawkular-wildfly-agent-wf-extension" to-location="standalone/configuration/hawkular-wildfly-agent-wf-extension.zip" />

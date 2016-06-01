@@ -53,7 +53,6 @@
 
   <modules>
     <module>console</module>
-    <module>modules/hawkular-wildfly-agent-download</module>
     <module>modules/pinger</module>
     <module>modules/avail-creator</module>
     <module>modules/hawkular-api-parent</module>
@@ -89,7 +88,7 @@
     <version.gnu.getopt>1.0.13</version.gnu.getopt>
 
     <version.org.hawkular.accounts>2.0.22.Final</version.org.hawkular.accounts>
-    <version.org.hawkular.agent>0.17.0.Final</version.org.hawkular.agent>
+    <version.org.hawkular.agent>0.17.6.Final-SNAPSHOT</version.org.hawkular.agent>
     <version.org.hawkular.alerts>1.1.0.Final</version.org.hawkular.alerts>
     <version.org.hawkular.btm>0.7.4.Final</version.org.hawkular.btm>
     <version.org.hawkular.cmdgw>0.11.0.Final</version.org.hawkular.cmdgw>

@@ -53,9 +53,9 @@
       <type>war</type>
     </dependency>
     <dependency>
-      <groupId>org.hawkular</groupId>
+      <groupId>org.hawkular.agent</groupId>
       <artifactId>hawkular-wildfly-agent-download</artifactId>
-      <version>${project.version}</version>
+      <version>${version.org.hawkular.agent}</version>
       <type>war</type>
     </dependency>
     <dependency>
